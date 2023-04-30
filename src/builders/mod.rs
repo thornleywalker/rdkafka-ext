@@ -1,5 +1,5 @@
 pub mod traits;
-mod types;
+pub mod types;
 
 use std::time::Duration;
 
@@ -125,7 +125,7 @@ impl ConsumerConfigBuilder {
     ///
     /// Default: latest
     pub fn auto_offset_reset(mut self, reset: Reset) -> Self {
-        self.set("auto.offest.reset", reset);
+        self.set("auto.offset.reset", reset);
         self
     }
     /// Close idle connections after the number of milliseconds specified by this config.
@@ -192,6 +192,11 @@ pub struct AdminConfigBuilder {
     config: ClientConfig,
 }
 impl AdminConfigBuilder {
+    pub fn new() -> Self {
+        Self {
+            config: ClientConfig::new(),
+        }
+    }
     pub fn build(self) -> ClientConfig {
         self.config
     }
