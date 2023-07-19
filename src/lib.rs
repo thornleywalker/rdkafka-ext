@@ -130,7 +130,7 @@ impl TypedAdmin {
         let topic_string = topic.topic_string();
 
         let new_topic = NewTopic::new(&topic_string, num_partitions, replication);
-        let create = self
+        let _create = self
             .inner
             .create_topics(&[new_topic], &AdminOptions::new())
             .await

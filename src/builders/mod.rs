@@ -13,6 +13,7 @@ use self::{
     types::Reset,
 };
 
+#[derive(Default)]
 pub struct ProducerConfigBuilder {
     config: ClientConfig,
 }
@@ -39,6 +40,7 @@ impl ProducerConfigBuilder {
     // producer specific ones
 }
 
+#[derive(Default)]
 pub struct ConsumerConfigBuilder {
     config: ClientConfig,
 }
@@ -188,6 +190,7 @@ impl ConsumerConfigBuilder {
     /* TODO: more after here */
 }
 
+#[derive(Default)]
 pub struct AdminConfigBuilder {
     config: ClientConfig,
 }
